@@ -9,7 +9,6 @@ public class TEAMS{
     static ArrayList<Student> students;
     static ArrayList<Teacher> teachers;
     static ArrayList<Course> courses;
-
     static Scanner sc = new Scanner(System.in);
 
 
@@ -36,14 +35,59 @@ public class TEAMS{
 
 
         //############## MAIN MENU STARTS HERE ##############
-        int ans = 0;
-
-        while(ans != -1){
-            System.out.println("1. ");
-        }
         
 
+
+        System.out.println("##### WELCOME #####");
+        int choice = 1;
+        while(choice > 0){
+            //Print the Menu
+            System.out.println("1) Add Student"); 
+            System.out.println("2) Add Teacher"); 
+            System.out.println("3) Add Course"); 
+            System.out.println("4) Edit Student"); 
+            System.out.println("5) List Student"); 
+            System.out.println("6) List Courses"); 
+            System.out.println("7) Search for Student");
+            System.out.println("0) Exit"); 
+
+            System.out.println();//EMPTY LINE
+            //get the choice
+            System.out.println("Choice: ");
+            choice = sc.nextInt();
+            sc.nextLine();//You have to do this
+            if(choice  == 1){
+                optionOne();
+            }else if(choice == 2){
+                optionTwo();
+            }else if(choice == 3){
+                optionThree();
+            }
+        }
     }
+    public static void optionOne(){
+        System.out.println("DOING OPTION 1");
+    }
+    public static void optionTwo(){
+        System.out.println("DOING OPTION 2");
+    }
+    public static void optionThree(){
+        int choice = 1;
+        while(choice > 0){
+            //Print the Menu
+            System.out.print("#### OPTION 3 Menu ####");
+            System.out.println("1) Sub Option 1"); 
+            System.out.println("2) Sub Option 2");
+            System.out.println("3) Sub Option 3");
+            System.out.println("0) Exit");
+            System.out.println();//EMPTY LINE
+            //get the choice
+            System.out.println("Choice: ");
+            choice = sc.nextInt();
+            sc.nextLine();//You have to do this
+        }
+    }
+
 
     //#### DO NOT CHANGE THIS FUNCTION ####
     public static void saveData()throws Exception{
