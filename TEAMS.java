@@ -75,7 +75,7 @@ public class TEAMS{
         int choice = 1;
         while(choice > 0){
             //Print the Menu
-            System.out.print("#### OPTION 3 Menu ####");
+            System.out.println("#### OPTION 3 Menu ####");
             System.out.println("1) Sub Option 1"); 
             System.out.println("2) Sub Option 2");
             System.out.println("3) Sub Option 3");
