@@ -57,28 +57,61 @@ public class TEAMS{
             choice = sc.nextInt();
             sc.nextLine();//You have to do this
             if(choice  == 1){
-                optionOne();
+                AddStudent();
             }else if(choice == 2){
-                optionTwo();
+                AddTeacher();
             }else if(choice == 3){
-                optionThree();
+                AddCourse();
             }
         }
     }
-    public static void optionOne(){
-        System.out.println("DOING OPTION 1");
-    }
-    public static void optionTwo(){
-        System.out.println("DOING OPTION 2");
-    }
-    public static void optionThree(){
+    public static void AddStudent(){
         int choice = 1;
         while(choice > 0){
             //Print the Menu
-            System.out.println("#### OPTION 3 Menu ####");
-            System.out.println("1) Sub Option 1"); 
-            System.out.println("2) Sub Option 2");
-            System.out.println("3) Sub Option 3");
+            System.out.println("#### Add Student ####");
+            System.out.println("1) Student Name"); 
+            System.out.println("2) Grade Level");
+            System.out.println("3) Courses");
+            System.out.println("0) Exit");
+            System.out.println();//EMPTY LINE
+            //get the choice
+            System.out.println("Choice: ");
+            choice = sc.nextInt();
+            sc.nextLine();//You have to do this
+            if(choice  == 1){
+                AddStudent();
+            }else if(choice == 2){
+                AddTeacher();
+            }else if(choice == 3){
+                AddCourse();
+            }
+        }
+        }
+    }
+    public static void AddTeacher(){
+        int choice = 1;
+        while(choice > 0){
+            //Print the Menu
+            System.out.println("#### Add Teacher ####");
+            System.out.println("1) Teacher Name"); 
+            System.out.println("2) Years of Experience");
+            System.out.println("0) Exit");
+            System.out.println();//EMPTY LINE
+            //get the choice
+            System.out.println("Choice: ");
+            choice = sc.nextInt();
+            sc.nextLine();//You have to do this
+        }
+    }
+    public static void AddCourse(){
+        int choice = 1;
+        while(choice > 0){
+            //Print the Menu
+            System.out.println("#### Add Course ####");
+            System.out.println("1) Teacher"); 
+            System.out.println("2) Subject");
+            System.out.println("3) Grade Current");
             System.out.println("0) Exit");
             System.out.println();//EMPTY LINE
             //get the choice
