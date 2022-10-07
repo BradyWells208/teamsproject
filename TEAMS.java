@@ -10,6 +10,7 @@ public class TEAMS{
     static ArrayList<Teacher> teachers;
     static ArrayList<Course> courses;
     static Scanner sc = new Scanner(System.in);
+    static String checkname;
 
 
     public static void main(String[] args) {
@@ -62,9 +63,13 @@ public class TEAMS{
                 AddTeacher();
             }else if(choice == 3){
                 AddCourse();
+            }else if(choice == 2){
+                AddTeacher();
+            }else if(choice == 4){
+                SearchforStudent();
+            }
             }
         }
-    }
     public static void AddStudent(){
         int choice = 1;
         while(choice > 0){
@@ -87,7 +92,6 @@ public class TEAMS{
                 AddCourse();
             }
         }
-        }
     }
     public static void AddTeacher(){
         int choice = 1;
@@ -103,6 +107,15 @@ public class TEAMS{
             choice = sc.nextInt();
             sc.nextLine();//You have to do this
         }
+    }
+    public static void SearchforStudent(){
+        checkname = "";
+        System.out.println("#### Student Search ####");
+        System.out.println();
+        System.out.println("Student Name: ");
+        checkname = sc.nextLine();
+        sc.nextLine();//You have to do this
+        if(checkname == Name;)
     }
     public static void AddCourse(){
         int choice = 1;
