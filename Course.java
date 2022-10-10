@@ -1,13 +1,15 @@
 import java.io.Serializable;
 
-public class Course implements Serializable{
+public class Course implements Serializable, Cloneable{
     private String Subject;
     private Teacher Teacher;
     private int Grade;
     private Boolean Current;
-    public Course(Teacher Teacher, String Subject, int Grade, Boolean Current){
+    public Course(Teacher Teacher, String Subject){
         this.Teacher = Teacher;
         this.Subject = Subject;
+    }
+    public Course(int Grade, Boolean Current){
         this.Grade = Grade;
         this.Current = Current;
     }
@@ -41,5 +43,8 @@ public class Course implements Serializable{
     }
     public Boolean getCurrent(){
         return Current;
+    }
+    public String toString(){
+        return Subject+" by "+Teacher+"Grade: "+Grade;
     }
 }

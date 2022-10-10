@@ -7,16 +7,20 @@ public class Teacher implements Serializable {
         this.TName = TName;
         this.yearsofExperience = yearsofExperience;
     }
-    public void setTName(String TName){
-        this.TName = TName;
-    }
-    public String getTName(){
-        return TName;
-    }
+
     public void setyearsofExperience(int yoE){
         this.yearsofExperience = yoE;
     }
     public int getyearsofExperience(){
         return yearsofExperience;
     }
-}   
+    public void setTName(String TName){
+        this.TName = TName;
+    }
+    public String getTName(){
+        return TName;
+    }
+    public String toString(){
+        return TName;
+    }
+}

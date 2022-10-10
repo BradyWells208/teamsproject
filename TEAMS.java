@@ -63,78 +63,93 @@ public class TEAMS{
                 AddTeacher();
             }else if(choice == 3){
                 AddCourse();
-            }else if(choice == 2){
-                AddTeacher();
             }else if(choice == 4){
+                editStudent();
+            }else if(choice == 5){
+                listStudents();
+            }else if(choice == 6){
+                listCourses();
+            }else if(choice == 7){
                 SearchforStudent();
-            }
+            }else if(choice == 0){
+                try{
+                    saveData();
+                }catch(Exception e){}
             }
         }
+    }
     public static void AddStudent(){
-        int choice = 1;
-        while(choice > 0){
-            //Print the Menu
-            System.out.println("#### Add Student ####");
-            System.out.println("1) Student Name"); 
-            System.out.println("2) Grade Level");
-            System.out.println("3) Courses");
-            System.out.println("0) Exit");
-            System.out.println();//EMPTY LINE
-            //get the choice
-            System.out.println("Choice: ");
-            choice = sc.nextInt();
-            sc.nextLine();//You have to do this
-            if(choice  == 1){
-                AddStudent();
-            }else if(choice == 2){
-                AddTeacher();
-            }else if(choice == 3){
-                AddCourse();
-            }
-        }
+        System.out.print("Name: ");
+        String n = sc.nextLine();
+        sc.nextLine();
+        System.out.print("Grade Level: ");
+        int gl = sc.nextInt();
+        sc.nextLine();
+        students.add(new Student(n,gl));
     }
     public static void AddTeacher(){
-        int choice = 1;
-        while(choice > 0){
-            //Print the Menu
-            System.out.println("#### Add Teacher ####");
-            System.out.println("1) Teacher Name"); 
-            System.out.println("2) Years of Experience");
-            System.out.println("0) Exit");
-            System.out.println();//EMPTY LINE
-            //get the choice
-            System.out.println("Choice: ");
-            choice = sc.nextInt();
-            sc.nextLine();//You have to do this
-        }
-    }
-    public static void SearchforStudent(){
-        checkname = "";
-        System.out.println("#### Student Search ####");
-        System.out.println();
-        System.out.println("Student Name: ");
-        checkname = sc.nextLine();
-        sc.nextLine();//You have to do this
-        if(checkname == Name;)
+        System.out.print("Teacher Name: ");
+        String n = sc.nextLine();
+        sc.nextLine();
+        System.out.print("Years of Experience: ");
+        int yoe = sc.nextInt();
+        sc.nextLine();
+        teachers.add(new Teacher(n,yoe));
     }
     public static void AddCourse(){
-        int choice = 1;
-        while(choice > 0){
-            //Print the Menu
-            System.out.println("#### Add Course ####");
-            System.out.println("1) Teacher"); 
-            System.out.println("2) Subject");
-            System.out.println("3) Grade Current");
-            System.out.println("0) Exit");
-            System.out.println();//EMPTY LINE
-            //get the choice
-            System.out.println("Choice: ");
-            choice = sc.nextInt();
-            sc.nextLine();//You have to do this
+        System.out.print("Subject ");
+        String n = sc.nextLine();
+        sc.nextLine();
+        System.out.print("Teacher: ");
+        for(Teacher i : teachers){
+            System.out.println(i);
         }
+        int a = sc.nextInt();
+        Teacher ans = teachers.get(a);
+        sc.nextLine();
+        courses.add(new Course(ans,n));
     }
+    public static void editStudent(){
+        System.out.println("Student");
+        listStudents();
+        System.out.println();
+        System.out.println("Choice: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+        Student s = students.get(n);
+        System.out.println("Change Name: ");
+        String sn = sc.nextLine();
+        s.setName(sn);
+        System.out.println("Change Grade level: ");
+        int v = sc.nextInt();
+        s.setgradeLevel(v);
+        System.out.println("Pick a class");
+        listCourses();
+        System.out.println();
+        System.out.println("Choice: ");
+        int ans = sc.nextInt();
+        sc.nextLine();
+        if(ans > -1 && ans < courses.size()){
+            Course c = courses.get(ans).clone();
+            System.out.println("Enter Grade");
+            int grade = sc.nextInt();
+            c.setGrade(grade);
+            sc.nextLine();
+            System.out.println("Currently being taken (y/n)?");
+            String yesNo = sc.nextLine();
+            if(yesNo.equals("y")){
+                c.setCurrent(true);
+            }
+            Student.addCourse(c);
+        }
 
-
+    }
+    public static void listStudents(){
+        System.out.println(students);
+    }
+    public static void listCourses(){
+        System.out.println(courses);
+    }
     //#### DO NOT CHANGE THIS FUNCTION ####
     public static void saveData()throws Exception{
         FileOutputStream f1 = new FileOutputStream("students");
